@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: sans-serif;
+    position: relative;
+    background-image: url("assets/bodybg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 530px;
+    height: 700px;
+    transition: transform 0.5s;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+    border-radius: 20px;
+}
+img{
+    border-radius: 20px;
+}
+.front,
+.back {
+    border-radius: 20px;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+    box-shadow: 10 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg);
+    display: block;
+    justify-items: center;
+    margin-top: 20px;
+}
+.back-content ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: small;
+    font-weight: bold;
+}
+
+.back-content ul li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.back-content hr{
+    width: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+}
+.back-content p {
+    text-align: center;
+    max-width: 85%;
+    line-height: 1.6;
+}
+
+.front-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.front-content img {
+    width: 525px;
+    height: 60%;
+    display: block;
+}
+
+.edu {
+    display: flex;              /* ترتيب العناصر جنب بعض */
+    align-items: center;        /* يوسّط الصورة والنص عمودياً */
+}
+
+.edu img {
+    width: 260px;               /* حجم الصورة حسب رغبتك */
+    height: 280px;
+    display: block;
+    
+}
+
+.edu .text {
+    display: flex;
+    flex-direction: column;
+}
+.edu ul{
+    list-style-type: none;
+    margin-right: 10px;
+}
+
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 1s;
+    z-index: 10;
+    position: absolute; /* إضافة هذا السطر */
+    top: 50%; /* لضبط الموضع العمودي في المنتصف */
+    transform: translateY(-50%); /* لضمان التوسيط الدقيق */
+}
+
+#prev-btn {
+    left: 15%; /* تعديل المسافة من اليسار */
+}
+
+#next-btn {
+    right: 15%; /* تعديل المسافة من اليمين */
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    font-size: 50px;
+    color: rgb(65, 73, 222);
+}
+
+#p1 {
+    z-index: 3;
+}
+
+#p2 {
+    z-index: 2;
+}
+
+#p3 {
+    z-index: 1;
+}
+#f1{
+    background-image: url("assets/Me.jpg");
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.ex h1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.ex img{
+    margin-top: 10px;
+    width: 100%;               /* حجم الصورة حسب رغبتك */
+    height: 280px;
+    display: block;
+}
+.job {
+    display: flex;
+    justify-content: space-between;         /* يضبطهم على نفس الخط */
+    gap: 250px;
+}
+
+.job .date {
+    margin-top: 10px;
+    font-size: 10px;
+}
+.ex h4{
+    position: absolute;
+    right: 83%;
+    display: flex;
+    justify-content: space-between;
+}
+.experience-list {
+    margin: 10px 0;
+    list-style-position: inside; /* النقطة تصير جزء من النص */
+    line-height: 1.8;   
+    flex-direction: column;
+}
+
+.experience-list li {
+    list-style-type: none;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+.ex2 img{
+    margin-top: 10px;
+    width: 100%;               /* حجم الصورة حسب رغبتك */
+    height: 300px;
+    display: block;
+}
+.ex2 h1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 350px;
+    font-size: 20px;
+}
+.ex2 h4 {
+    margin-right: auto; 
+}
+.ex2{
+    padding-left: 10px;
+}
+.ex{
+    padding-left: 10px;
+}
+.ex3 {
+    display: flex;
+    flex-direction: column; /* ترتيب العمود */
+    align-items: flex-start;
+    margin: 0;
+    padding-left: 10px;
+}
+
+.ex3 img {
+    width: 100%;
+    height: 280px;
+    display: block;
+    object-fit: cover;
+    margin-bottom: 15px;
+    position: relative; 
+}
+
+.ex3 h1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.ex3 .job {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.ex3 h4 {
+    margin-bottom: 10px;
+}
+
+.ex3 .experience-list {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.ex3 .skills {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.ex3 .skills h1 {
+    margin-bottom: 5px;
+}
+
+.ex3 .skills-list {
+    display: flex;
+    flex-wrap: wrap; /* إذا زادت العناصر تنتقل للسطر التالي */
+    gap: 10px; /* مسافة بين العناصر */
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+.ex3 .skills-list li {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+.edu table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+    border: 3px solid #ddd;
+}
+
+.edu table td {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.text{
+    margin-left: 20px;
+}
+/* للشاشات أصغر من 768px (تابلت) */
+@media (max-width: 768px) {
+    .book {
+        height: 80%;
+    }
+    .edu {
+        flex-direction: column; /* الصورة فوق النص */
+        align-items: center;
+    }
+    .text {
+        margin-left: 0;
+        text-align: center;
+    }
+    .job {
+        gap: 5px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .skills-list {
+        justify-content: flex-start;
+        gap: 5px;
+    }
+}
+
+/* للشاشات أصغر من 480px (موبايل) */
+@media (max-width: 480px) {
+    .book {
+        height: 75%;
+    }
+    i {
+        font-size: 12vw;
+    }
+    .edu img {
+        width: 80%;
+        height: auto;
+    }
+    .ex2 h1,
+    .ex3 h1 {
+        font-size: 16px;
+    }
+}
+/* Body للشاشات أصغر من 1024px (لابتوب صغير أو تابلت كبير) */
+@media (max-width: 1024px) {
+    body {
+        height: auto;
+        padding: 20px;
+        background-size: contain; /* أو cover حسب رغبتك */
+        background-position: center;
+    }
+}
+
+/* Body للشاشات أصغر من 768px (تابلت) */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 15px;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* Body للشاشات أصغر من 480px (موبايل) */
+@media (max-width: 480px) {
+    body {
+        height: auto;
+        padding: 10px;
+        background-size: cover;
+        background-position: center;
+    }
+}

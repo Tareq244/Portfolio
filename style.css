@@ -1,3 +1,34 @@
+
+html {
+    font-size: 16px; 
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -15,13 +46,20 @@ body {
     background-image: url("assets/bodybg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 1.25rem;
+}
+@media (max-width: 800px) {
+    body {
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
 }
 
-/* Book */
+
 .book {
     position: relative;
-    width: 530px;
-    height: 700px;
+    width: 33.125rem;
+    height: 43.75rem;
     transition: transform 0.5s;
 }
 
@@ -31,15 +69,15 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    perspective: 1500px;
-    border-radius: 20px;
+    perspective: 93.75rem;
+    border-radius: 1.25rem;
 }
 img{
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 .front,
 .back {
-    border-radius: 20px;
+    border-radius: 1.25rem;
     background-color: white;
     position: absolute;
     width: 100%;
@@ -53,8 +91,8 @@ img{
 .front {
     z-index: 1;
     backface-visibility: hidden;
-    border-left: 3px solid powderblue;
-    box-shadow: 10 20px 30px rgba(0, 0, 0, 0.1);
+    border-left: 0.1875rem solid powderblue;
+    box-shadow: 0.625rem 1.25rem 1.875rem rgba(0, 0, 0, 0.1);
 }
 
 .back {
@@ -74,7 +112,7 @@ img{
     transform: rotateY(180deg);
     display: block;
     justify-items: center;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 .back-content ul {
     display: flex;
@@ -91,9 +129,9 @@ img{
     text-decoration: none;
 }
 .back-content hr{
-    width: 500px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    width: 31.25rem;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
     color: black;
 }
 .back-content p {
@@ -110,21 +148,20 @@ img{
 }
 
 .front-content img {
-    width: 525px;
+    width: 32.8125rem;
     height: 60%;
     display: block;
 }
 
 .edu {
-    display: flex;              /* ترتيب العناصر جنب بعض */
-    align-items: center;        /* يوسّط الصورة والنص عمودياً */
+    display: flex;
+    align-items: center;
 }
 
 .edu img {
-    width: 260px;               /* حجم الصورة حسب رغبتك */
-    height: 280px;
+    width: 16.25rem;
+    height: 17.5rem;
     display: block;
-    
 }
 
 .edu .text {
@@ -133,7 +170,7 @@ img{
 }
 .edu ul{
     list-style-type: none;
-    margin-right: 10px;
+    margin-right: 0.625rem;
 }
 
 .flipped .front,
@@ -141,25 +178,24 @@ img{
     transform: rotateY(-180deg);
 }
 
-/* Controller Buttons */
 button {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    margin: 10px;
+    margin: 0.625rem;
     transition: transform 1s;
     z-index: 10;
-    position: absolute; /* إضافة هذا السطر */
-    top: 50%; /* لضبط الموضع العمودي في المنتصف */
-    transform: translateY(-50%); /* لضمان التوسيط الدقيق */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #prev-btn {
-    left: 15%; /* تعديل المسافة من اليسار */
+    left: 15%;
 }
 
 #next-btn {
-    right: 15%; /* تعديل المسافة من اليمين */
+    right: 15%;
 }
 
 button:focus {
@@ -171,48 +207,41 @@ button:hover i {
 }
 
 i {
-    font-size: 50px;
+    font-size: 3.125rem;
     color: rgb(65, 73, 222);
 }
 
-#p1 {
-    z-index: 3;
-}
+#p1 { z-index: 3; }
+#p2 { z-index: 2; }
+#p3 { z-index: 1; }
 
-#p2 {
-    z-index: 2;
-}
-
-#p3 {
-    z-index: 1;
-}
 #f1{
     background-image: url("assets/Me.jpg");
     background-size: cover;
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 
 .ex h1 {
     width: 100%;
     text-align: center;
-    margin-top: 10px;
-    font-size: 20px;
+    margin-top: 0.625rem;
+    font-size: 1.25rem;
 }
 .ex img{
-    margin-top: 10px;
-    width: 100%;               /* حجم الصورة حسب رغبتك */
-    height: 280px;
+    margin-top: 0.625rem;
+    width: 100%;
+    height: 17.5rem;
     display: block;
 }
 .job {
     display: flex;
-    justify-content: space-between;         /* يضبطهم على نفس الخط */
-    gap: 250px;
+    justify-content: space-between;
+    gap: 15.625rem;
 }
 
 .job .date {
-    margin-top: 10px;
-    font-size: 10px;
+    margin-top: 0.625rem;
+    font-size: 0.625rem;
 }
 .ex h4{
     position: absolute;
@@ -221,91 +250,89 @@ i {
     justify-content: space-between;
 }
 .experience-list {
-    margin: 10px 0;
-    list-style-position: inside; /* النقطة تصير جزء من النص */
+    margin: 0.625rem 0;
+    list-style-position: inside;
     line-height: 1.8;   
     flex-direction: column;
 }
 
 .experience-list li {
     list-style-type: none;
-    margin-bottom: 8px;
-    font-size: 14px;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
     color: #333;
 }
 .ex2 img{
-    margin-top: 10px;
-    width: 100%;               /* حجم الصورة حسب رغبتك */
-    height: 300px;
+    margin-top: 0.625rem;
+    width: 100%;
+    height: 18.75rem;
     display: block;
 }
 .ex2 h1 {
     width: 100%;
     text-align: center;
-    margin-top: 10px;
-    margin-right: 350px;
-    font-size: 20px;
+    margin-top: 0.625rem;
+    margin-right: 21.875rem;
+    font-size: 1.25rem;
 }
 .ex2 h4 {
     margin-right: auto; 
 }
-.ex2{
-    padding-left: 10px;
+.ex2, .ex, .ex3 {
+    padding-left: 0.625rem;
 }
-.ex{
-    padding-left: 10px;
-}
+
 .ex3 {
     display: flex;
-    flex-direction: column; /* ترتيب العمود */
+    flex-direction: column;
     align-items: flex-start;
     margin: 0;
-    padding-left: 10px;
+    padding-left: 0.625rem;
 }
 
 .ex3 img {
     width: 100%;
-    height: 280px;
-    display: block;
+    height: 17.5rem;
+    display : block;
     object-fit: cover;
-    margin-bottom: 15px;
-    position: relative; 
+    margin-bottom: 0.9375rem;
+    position: relative;
 }
 
 .ex3 h1 {
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 1.25rem;
+    margin-bottom: 0.3125rem
 }
 
 .ex3 .job {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem
 }
 
 .ex3 h4 {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .ex3 .experience-list {
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
     line-height: 1.6;
 }
 
 .ex3 .skills {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 
 .ex3 .skills h1 {
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem
 }
 
 .ex3 .skills-list {
     display: flex;
-    flex-wrap: wrap; /* إذا زادت العناصر تنتقل للسطر التالي */
-    gap: 10px; /* مسافة بين العناصر */
+    flex-wrap: wrap;
+    gap: 0.625rem;
     list-style: none;
     padding: 0;
     justify-content: center;
@@ -313,93 +340,24 @@ i {
 
 .ex3 .skills-list li {
     background-color: #e0e0e0;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 10px;
+    padding: 0.3125rem 0.625rem;
+    border-radius: 0.3125rem;
+    font-size: 0.625rem;
 }
 
 .edu table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 10px;
-    border: 3px solid #ddd;
+    margin-top: 0.625rem;
+    border: 0.1875rem solid #ddd;
 }
 
 .edu table td {
-    padding: 5px 10px;
-    font-size: 14px;
+    padding: 0.3125rem 0.625rem;
+    font-size: 0.875rem;
 }
 
 .text{
-    margin-left: 20px;
-}
-/* للشاشات أصغر من 768px (تابلت) */
-@media (max-width: 768px) {
-    .book {
-        height: 80%;
-    }
-    .edu {
-        flex-direction: column; /* الصورة فوق النص */
-        align-items: center;
-    }
-    .text {
-        margin-left: 0;
-        text-align: center;
-    }
-    .job {
-        gap: 5px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .skills-list {
-        justify-content: flex-start;
-        gap: 5px;
-    }
+    margin-left: 1.25rem;
 }
 
-/* للشاشات أصغر من 480px (موبايل) */
-@media (max-width: 480px) {
-    .book {
-        height: 75%;
-    }
-    i {
-        font-size: 12vw;
-    }
-    .edu img {
-        width: 80%;
-        height: auto;
-    }
-    .ex2 h1,
-    .ex3 h1 {
-        font-size: 16px;
-    }
-}
-/* Body للشاشات أصغر من 1024px (لابتوب صغير أو تابلت كبير) */
-@media (max-width: 1024px) {
-    body {
-        height: auto;
-        padding: 20px;
-        background-size: contain; /* أو cover حسب رغبتك */
-        background-position: center;
-    }
-}
-
-/* Body للشاشات أصغر من 768px (تابلت) */
-@media (max-width: 768px) {
-    body {
-        height: auto;
-        padding: 15px;
-        background-size: cover;
-        background-position: center;
-    }
-}
-
-/* Body للشاشات أصغر من 480px (موبايل) */
-@media (max-width: 480px) {
-    body {
-        height: auto;
-        padding: 10px;
-        background-size: cover;
-        background-position: center;
-    }
-}
